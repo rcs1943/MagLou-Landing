@@ -3,9 +3,10 @@ import Footer from '../components/Footer/Footer.astro';
 import Header from '../components/Header/Header.astro';
 interface Props {
 	title?: string;
+	footerWithMap?: boolean;
 }
 
-const { title = "MagLou" } = Astro.props;
+const { title = "MagLou", footerWithMap } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +24,8 @@ const { title = "MagLou" } = Astro.props;
 	<body>
 		<Header />
 		<slot />
-		<!-- <Footer /> -->
+		<section class="w-full h-[1000px]"></section>
+		<Footer withMap={footerWithMap} />
 		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 	</body>
 </html>

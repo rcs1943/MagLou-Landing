@@ -1,0 +1,74 @@
+---
+interface Props {
+    withMap?: boolean;
+}
+const { withMap } = Astro.props;
+---
+
+<footer class="flex flex-col bg-black-2 mt-[78px]">
+    <article
+        class="flex w-full justify-center font-semibold py-16 text-lg md:flex-col md:items-center md:gap-12 md:pt-20 md:pb-12"
+    >
+        <div class="flex flex-col text-center gap-5 w-[30%] md:w-full">
+            <h5 class="text-white">Teléfono</h5>
+            <span class="text-primary">912 379 380</span>
+        </div>
+        <div
+            class="flex flex-col items-center gap-6 w-[30%] md:order-first md:w-full"
+        >
+            <picture>
+                <img
+                    src="/images/logo.png"
+                    alt="MagLou Logo"
+                    class="w-[145px]"
+                />
+            </picture>
+            <p class="text-white text-center">
+                Pachacútec Yupanqui 989,<br /> Parcona
+            </p>
+            <div class="flex gap-8 text-white text-3xl">
+                <a href="#" target="_blank">
+                    <iconify-icon icon="mdi:instagram"></iconify-icon>
+                </a>
+                <a href="#" target="_blank">
+                    <iconify-icon icon="la:facebook-f"></iconify-icon>
+                </a>
+                <a href="https://wa.me/+51912379380" target="_blank">
+                    <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon>
+                </a>
+                <a href="#" target="_blank">
+                    <iconify-icon icon="ic:baseline-tiktok"></iconify-icon>
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col text-center gap-5 w-[30%] md:w-full">
+            <h5 class="text-white">Abierto:</h5>
+            <div class="flex flex-col text-primary">
+                <span>Martes - Domingo</span>
+                <span>6:00 pm - 2:00 am</span>
+            </div>
+        </div>
+    </article>
+    {
+        withMap && (
+            <article class="flex flex-col items-center gap-6 pb-20">
+                <h5 class="text-white font-semibold text-lg">Nos encuentras en:</h5>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.6136688103852!2d-75.70240041031562!3d-14.050307499609337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91111d4e2a584565%3A0x896ff8d10bb3dbfb!2sW7XX%2BR4H%2C%20Ica%2011003!5e0!3m2!1ses-419!2spe!4v1703579698068!5m2!1ses-419!2spe"
+                    width="1280"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-[90%] lg:w-[95%]"
+                />
+            </article>
+        )
+    }
+    <footer class="text-center border-t-2 border-[#3A3B3A] py-6 sm:p-6">
+        <h4 class="text-white font-semibold text-lg">
+            © 2023 MagLou Karaoke Restobar | Todos los derechos reservados
+        </h4>
+    </footer>
+</footer>
