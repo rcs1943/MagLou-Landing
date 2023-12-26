@@ -1,0 +1,52 @@
+
+@font-face {
+    font-family: "BrandingSF";
+    src: local("BrandingSF"), url("../font/BrandingSF-SemiLight.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "BrandingSF";
+    src: local("BrandingSF"), url("../font/BrandingSF-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "BrandingSF";
+    src: local("BrandingSF"), url("../font/BrandingSF-SemiBold.ttf");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "BrandingSF";
+    src: local("BrandingSF"), url("../font/BrandingSF-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "BrandingSF";
+    src: local("BrandingSF"), url("../font/BrandingSF-Black.ttf");
+    font-weight: 900;
+}
+:root {
+    --black: #000;
+    --black-2: #0A0A0A;
+    --white: #FFF;
+    --primary: #F9DBB5;
+    --secondary: #FFF5E7;
+    --tertiary: #A16A41;
+    --fourth: #5C150E;
+}
+* {
+    font-family: "BrandingSF", sans-serif;
+    box-sizing: border-box;
+}
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+}

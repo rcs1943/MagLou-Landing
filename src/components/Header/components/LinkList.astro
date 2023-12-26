@@ -1,0 +1,106 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<nav class="w-full">
+    <ul
+        id="nav-menu"
+        class="flex relative items-center text-white font-semibold duration-300 text-lg w-full lg:fixed lg:bg-black-2 lg:flex-col lg:top-0 lg:right-0 lg:w-[300px] lg:h-screen lg:justify-center lg:gap-16 lg:z-10"
+    >
+        <span
+            id="close-btn"
+            class="rlg:hidden text-[#9a9ea3] hover:text-white duration-300 absolute top-8 right-8 text-3xl cursor-pointer"
+            ><iconify-icon icon="ph:x-bold"></iconify-icon></span
+        >
+        <div
+            class="flex items-center w-full justify-end pr-[170px] gap-24 xl:pr-[100px] xl:gap-16 lg:flex-col lg:p-0"
+        >
+            <li class="duration-200 hover:text-primary">
+                <a class={currentPath === "" ? "active" : ""} href="/">HOME</a>
+            </li>
+            <li class="duration-200 hover:text-primary">
+                <a
+                    class={currentPath === "nosotros" ? "active" : ""}
+                    href="/nosotros">QUIÉNES SOMOS</a
+                >
+            </li>
+            <li class="duration-200 hover:text-primary">
+                <a
+                    class={currentPath === "galeria" ? "active" : ""}
+                    href="/galeria">GALERÍA</a
+                >
+            </li>
+        </div>
+        <div
+            class="flex items-center w-full justify-start pl-[170px] gap-36 xl:pl-[100px] xl:gap-16 lg:flex-col lg:p-0"
+        >
+            <li class="duration-200 hover:text-primary">
+                <a class={currentPath === "carta" ? "active" : ""} href="/carta"
+                    >CARTA</a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://wa.me/+51912379380"
+                    target="_blank"
+                    class="btn-primary"
+                >
+                    RESERVAS
+                    <iconify-icon
+                        icon="iconamoon:arrow-up-2"
+                        rotate="90deg"
+                        class="flex text-[30px]"></iconify-icon>
+                </a>
+            </li>
+        </div>
+        <div class="absolute bottom-14">
+            <ul class="flex gap-4">
+                <li>
+                    <a
+                        href="#"
+                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        ><iconify-icon icon="mdi:instagram"></iconify-icon></a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        ><iconify-icon icon="la:facebook-f"></iconify-icon></a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        ><iconify-icon icon="ic:baseline-tiktok"
+                        ></iconify-icon></a
+                    >
+                </li>
+            </ul>
+        </div>
+    </ul>
+</nav>
+
+<script>
+    const closeBtn = document.getElementById("close-btn");
+    closeBtn.addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.remove("active");
+        document.getElementById("filter").classList.remove("active");
+    });
+</script>
+
+<style lang="scss">
+    #nav-menu {
+        @media (width < 1024px) {
+            translate: 100%;
+            &.active {
+                translate: 0;
+            }
+        }
+    }
+    #nav-menu li a.active {
+        color: var(--primary);
+    }
+</style>
