@@ -1,8 +1,11 @@
 ---
-import Footer from '../components/Footer/Footer.astro';
+import Hero from '@/components/index/Hero/Hero.astro';
+import Welcome from '@/components/index/Welcome/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 
-<Layout footerWithMap={true}>
+<Layout>
+    <Hero />
+    <Welcome />
 </Layout>

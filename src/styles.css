@@ -3,16 +3,45 @@
 @tailwind utilities;
 
 @layer components {
-  .btn-primary {
-    @apply flex relative items-center justify-center px-16 py-2 duration-300 font-bold gap-3 rounded-md bg-transparent text-secondary hover:text-primary before:absolute before:top-0  before:content-[""] before:inline-block before:w-full before:h-full before:box-border before:duration-300 before:ease-in-out before:rounded before:border-2 before:border-secondary after:absolute after:top-0 after:content-[""] after:w-full after:h-full after:box-border after:duration-300 after:ease-in-out after:rounded after:border-2 after:border-primary after:clip hover:after:clip-hover
-  }
+    .btn-primary {
+        @apply flex relative items-center justify-center px-16 py-2 duration-300 font-bold gap-3 rounded-md bg-transparent text-secondary hover:text-primary before:absolute before:top-0  before:content-[""] before:inline-block before:w-full before:h-full before:box-border before:duration-300 before:ease-in-out before:rounded before:border-2 before:border-secondary after:absolute after:top-0 after:content-[""] after:w-full after:h-full after:box-border after:duration-300 after:ease-in-out after:rounded after:border-2 after:border-primary after:clip hover:after:clip-hover;
+    }
+    .btn-secondary {
+        @apply btn-secondary-def sm:btn-secondary-sm;
+    }
 }
 
 @layer utilities {
-  .clip {
-    clip-path: polygon(0 0,0 0,0 100%,0 100%);
-  }
-  .clip-hover {
-    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
-  }
+    .clip {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    .clip-hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .btn-secondary-def {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 600;
+        padding: 12px 56px;
+        font-size: 22px;
+        border-radius: 4px;
+        background-image: linear-gradient(
+            180deg,
+            #f9dbb5 0%,
+            #d4ac85 70%,
+            #a16a41 100%
+        );
+        background-size: 100% 200%;
+        background-position: top;
+        transition: background-position 0.3s;
+    }
+    .btn-secondary-def:hover {
+        background-position: bottom;
+    }
+    .btn-secondary-sm {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
 }
