@@ -6,7 +6,7 @@ const currentPath = pathname.slice(1);
 <nav class="w-full">
     <ul
         id="nav-menu"
-        class="flex relative items-center text-white font-semibold duration-300 text-lg w-full lg:fixed lg:bg-black-2 lg:flex-col lg:top-0 lg:right-0 lg:w-[300px] lg:h-screen lg:justify-center lg:gap-16 lg:z-10"
+        class="flex relative items-center text-white font-semibold duration-300 text-lg w-full lg:fixed lg:bg-black-2 lg:flex-col lg:top-0 lg:right-0 lg:w-[300px] lg:h-[100dvh] lg:justify-center lg:gap-16 lg:z-10"
     >
         <span
             id="close-btn"
@@ -59,21 +59,34 @@ const currentPath = pathname.slice(1);
                 <li>
                     <a
                         href="#"
-                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        target="_blank"
+                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
                         ><iconify-icon icon="mdi:instagram"></iconify-icon></a
                     >
                 </li>
                 <li>
                     <a
                         href="#"
-                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        target="_blank"
+                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
                         ><iconify-icon icon="la:facebook-f"></iconify-icon></a
                     >
                 </li>
                 <li>
                     <a
+                        href="https://wa.me/+51912379380"
+                        target="_blank"
+                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    >
+                        <iconify-icon icon="ic:baseline-whatsapp"
+                        ></iconify-icon>
+                    </a>
+                </li>
+                <li>
+                    <a
                         href="#"
-                        class="flex text-3xl p-2 rounded-full duration-300 hover:bg-primary hover:text-black-2"
+                        target="_blank"
+                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
                         ><iconify-icon icon="ic:baseline-tiktok"
                         ></iconify-icon></a
                     >
@@ -84,10 +97,12 @@ const currentPath = pathname.slice(1);
 </nav>
 
 <script>
-    const closeBtn = document.getElementById("close-btn");
-    closeBtn.addEventListener("click", () => {
-        document.getElementById("nav-menu").classList.remove("active");
-        document.getElementById("filter").classList.remove("active");
+    document.addEventListener("astro:page-load", () => {
+        const closeBtn = document.getElementById("close-btn");
+        closeBtn.addEventListener("click", () => {
+            document.getElementById("nav-menu").classList.remove("active");
+            document.getElementById("filter").classList.remove("active");
+        });
     });
 </script>
 

@@ -5,7 +5,7 @@ interface Props {
 const { withMap } = Astro.props;
 ---
 
-<footer class="flex flex-col bg-black-2 mt-[78px]">
+<footer class="flex flex-col bg-black-2">
     <article
         class="flex w-full justify-center font-semibold py-16 text-lg md:flex-col md:items-center md:gap-12 md:pt-20 md:pb-12"
     >
@@ -26,20 +26,45 @@ const { withMap } = Astro.props;
             <p class="text-white text-center">
                 Pachacútec Yupanqui 989,<br /> Parcona
             </p>
-            <div class="flex gap-8 text-white text-3xl">
-                <a href="#" target="_blank">
-                    <iconify-icon icon="mdi:instagram"></iconify-icon>
-                </a>
-                <a href="#" target="_blank">
-                    <iconify-icon icon="la:facebook-f"></iconify-icon>
-                </a>
-                <a href="https://wa.me/+51912379380" target="_blank">
-                    <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon>
-                </a>
-                <a href="#" target="_blank">
-                    <iconify-icon icon="ic:baseline-tiktok"></iconify-icon>
-                </a>
-            </div>
+            <ul class="flex gap-8 text-white text-3xl">
+                <li>
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="flex p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    >
+                        <iconify-icon icon="mdi:instagram"></iconify-icon>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="flex p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    >
+                        <iconify-icon icon="la:facebook-f"></iconify-icon>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://wa.me/+51912379380"
+                        target="_blank"
+                        class="flex p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    >
+                        <iconify-icon icon="ic:baseline-whatsapp"
+                        ></iconify-icon>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="flex p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    >
+                        <iconify-icon icon="ic:baseline-tiktok"></iconify-icon>
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="flex flex-col text-center gap-5 w-[30%] md:w-full">
             <h5 class="text-white">Abierto:</h5>
@@ -52,7 +77,9 @@ const { withMap } = Astro.props;
     {
         withMap && (
             <article class="flex flex-col items-center gap-6 pb-20">
-                <h5 class="text-white font-semibold text-lg">Nos encuentras en:</h5>
+                <h5 class="text-white font-semibold text-lg">
+                    Nos encuentras en:
+                </h5>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.6136688103852!2d-75.70240041031562!3d-14.050307499609337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91111d4e2a584565%3A0x896ff8d10bb3dbfb!2sW7XX%2BR4H%2C%20Ica%2011003!5e0!3m2!1ses-419!2spe!4v1703579698068!5m2!1ses-419!2spe"
                     width="1280"

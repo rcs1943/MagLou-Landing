@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "BrandingSF";
     src: local("BrandingSF"), url("../font/BrandingSF-SemiLight.ttf");
@@ -26,12 +25,12 @@
 }
 :root {
     --black: #000;
-    --black-2: #0A0A0A;
-    --white: #FFF;
-    --primary: #F9DBB5;
-    --secondary: #FFF5E7;
-    --tertiary: #A16A41;
-    --fourth: #5C150E;
+    --black-2: #0a0a0a;
+    --white: #fff;
+    --primary: #f9dbb5;
+    --secondary: #fff5e7;
+    --tertiary: #a16a41;
+    --fourth: #5c150e;
 }
 * {
     font-family: "BrandingSF", sans-serif;
@@ -49,4 +48,8 @@ p {
 }
 img {
     max-width: 100%;
+}
+*::selection {
+    color: var(--white);
+    background: var(--tertiary);
 }

@@ -1,0 +1,45 @@
+---
+interface MenuCard {
+    image: string;
+    category: string;
+    description: string;
+    menuButton: {
+        path: string;
+        content: string;
+    };
+}
+const { image, category, description, menuButton } = Astro.props as MenuCard;
+const { path, content } = menuButton;
+---
+
+<div class="group flex flex-col w-[500px] sm:w-full">
+    <picture id="menu-image" class="relative overflow-hidden after:opacity-0 group-hover:after:opacity-100">
+        <img
+            src={image}
+            alt="Imagen de Categoría de Menú"
+            class="w-full h-[200px] duration-[1500ms] object-cover group-hover:scale-125"
+        />
+    </picture>
+    <div
+        class="flex flex-col items-center p-10 pb-14 bg-black-2 gap-5 xsm:px-6 xsm:gap-6"
+    >
+        <h2 class="text-secondary font-semibold text-5xl">{category}</h2>
+        <p class="text-secondary font-medium text-center text-lg pb-6">
+            {description}
+        </p>
+        <a href={path} class="btn-primary text-xl py-3">{content}</a>
+    </div>
+</div>
+
+<style>
+    #menu-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 1500ms;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+</style>

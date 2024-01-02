@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/shared/Footer/Footer.astro';
 import Header from '../components/shared/Header/Header.astro';
 interface Props {
@@ -20,10 +21,13 @@ const { title = "MagLou", footerWithMap } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
-		<Header />
-		<slot />
+		<Header/>
+		<main>
+			<slot />
+		</main>
 		<Footer withMap={footerWithMap} />
 		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 	</body>

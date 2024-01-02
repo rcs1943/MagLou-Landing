@@ -2,36 +2,53 @@
 import LinkList from "./components/LinkList.astro";
 ---
 
-<header class="flex items-center fixed top-0 left-0 w-full px-5 py-4 bg-header lg:min-h-[86.2px] lg:justify-end">
+<header
+    class="flex items-center fixed top-0 left-0 w-full px-5 py-4 z-10 bg-header lg:min-h-[86.2px] lg:justify-end"
+>
     <LinkList />
-    <div id="filter" class="lg:fixed lg:top-0 lg:left-0 lg:w-screen lg:h-full lg:bg-[rgba(0,0,0,0.6)] lg:z-[5]"></div>
+    <div
+        id="filter"
+        class="lg:fixed lg:top-0 lg:left-0 lg:w-screen lg:h-full lg:bg-[rgba(0,0,0,0.6)] lg:z-[5]"
+    >
+    </div>
     <a href="/" class="absolute top-2 left-2/4 -translate-x-2/4">
         <picture>
-            <img
-                src="/images/logo.png"
-                alt="MagLou Logo"
-                class="w-[150px]"
-            />
+            <img src="/images/logo.png" alt="MagLou Logo" class="w-[150px]" />
         </picture>
     </a>
-    <button id="ham-button" class="hidden lg:block text-secondary text-3xl justify-self-end" >
+    <button
+        id="ham-button"
+        class="hidden lg:block text-secondary text-3xl justify-self-end"
+    >
         <iconify-icon icon="iconamoon:menu-burger-horizontal-bold"
         ></iconify-icon>
     </button>
 </header>
 
+
+<script src="@/utils/pure-swipe.js"></script>
 <script>
+    document.addEventListener("astro:page-load", () => {
     const hamButton = document.getElementById("ham-button");
     const navMenu = document.getElementById("nav-menu");
     const filter = document.getElementById("filter");
-    hamButton.addEventListener("click", () => {
-        navMenu.classList.add("active");
-        filter.classList.add("active");
-    })
-    filter.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        filter.classList.remove("active");
-    })
+        hamButton.addEventListener("click", () => {
+            navMenu.classList.add("active");
+            filter.classList.add("active");
+        });
+        filter.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            filter.classList.remove("active");
+        });
+        filter.addEventListener("swiped-right", () => {
+            navMenu.classList.remove("active");
+            filter.classList.remove("active");
+        })
+        navMenu.addEventListener("swiped-right", () => {
+            navMenu.classList.remove("active");
+            filter.classList.remove("active");
+        })
+    });
 </script>
 
 <style lang="scss">
