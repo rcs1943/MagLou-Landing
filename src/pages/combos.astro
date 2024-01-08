@@ -1,0 +1,145 @@
+---
+import Combo from "@/components/combos/combo.astro";
+import SectionMenu from "@/components/shared/SectionMenu/SectionMenu.astro";
+import SectionMenuCategory from "@/components/shared/SectionMenuCategory/SectionMenuCategory.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const COMBOS_1 = [
+    {
+        comboTitle: "Ron Cartavio 750ml + 1 Jarra de Gaseosa + Hielo",
+        comboImg: "/images/combos/combo_1.jpg",
+        comboPrice: 70,
+    },
+    {
+        comboTitle: "Ron Cartavio 1Lt + 1 Jarra de Gaseosa + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 90,
+    },
+    {
+        comboTitle: "Red Label Johnnie Walker + 1 Jarra de Gaseosa + Hielo",
+        comboImg: "/images/combos/combo_1.jpg",
+        comboPrice: 130,
+    },
+];
+
+const COMBOS_2 = [
+    {
+        comboTitle:
+            "Black Label Johnnie Walker + 1 Jarra de Evervess o 2 Red Bull + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 220,
+    },
+    {
+        comboTitle:
+            "Golden Label Johnnie Walker + 1 Jarra de Evervess + 2 Red Bull + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        // comboPrice: 220,
+    },
+    {
+        comboTitle:
+            "Blue Label Johnnie Walker + Coca Cola 2.5Lt + 6 Red Bull + Hielo",
+        comboImg: "/images/combos/combo_1.jpg",
+        // comboPrice: 130,
+    },
+];
+
+const COMBOS_3 = [
+    {
+        comboTitle: "Vodka Smirnoff de manzana + Jarra de Tampico + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 80,
+    },
+    {
+        comboTitle: "Vodka Smirnoff de limón + Jarra de Evervess + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 80,
+    },
+];
+
+const COMBOS_4 = [
+    {
+        comboTitle: "Jagger + Jarra de Tampico + Hielo",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 150,
+    },
+    {
+        comboTitle: "Tequila José Cuervo + Rodajas de limón + Sal",
+        comboImg: "/images/combos/combo_2.jpg",
+        comboPrice: 120,
+    },
+];
+---
+
+<Layout mainBgColor="main-gradient">
+    <div class="h-[200px]"></div>
+    <SectionMenu>
+        <SectionMenuCategory
+            category="Combos"
+            rhombusW="w-[110px]"
+            rhombusH="h-[110px]"
+        />
+        <div class="combo-list flex flex-col gap-16 pt-6">
+            {
+                COMBOS_1.map(({ comboTitle, comboImg, comboPrice }) => (
+                    <Combo
+                        comboTitle={comboTitle}
+                        comboImg={comboImg}
+                        comboPrice={comboPrice}
+                    />
+                ))
+            }
+        </div>
+    </SectionMenu>
+    <div class="h-[100px]"></div>
+    <SectionMenu>
+        <div class="combo-list flex flex-col gap-16 pt-6">
+            {
+                COMBOS_2.map(({ comboTitle, comboImg, comboPrice }) => (
+                    <Combo
+                        comboTitle={comboTitle}
+                        comboImg={comboImg}
+                        comboPrice={comboPrice}
+                    />
+                ))
+            }
+        </div>
+    </SectionMenu>
+    <div class="h-[100px]"></div>
+    <SectionMenu>
+        <div class="combo-list flex flex-col gap-16 pt-6">
+            {
+                COMBOS_3.map(({ comboTitle, comboImg, comboPrice }) => (
+                    <Combo
+                        comboTitle={comboTitle}
+                        comboImg={comboImg}
+                        comboPrice={comboPrice}
+                    />
+                ))
+            }
+        </div>
+    </SectionMenu>
+    <div class="h-[100px]"></div>
+    <SectionMenu>
+        <div class="combo-list flex flex-col gap-16 pt-6">
+            {
+                COMBOS_4.map(({ comboTitle, comboImg, comboPrice }) => (
+                    <Combo
+                        comboTitle={comboTitle}
+                        comboImg={comboImg}
+                        comboPrice={comboPrice}
+                    />
+                ))
+            }
+        </div>
+    </SectionMenu>
+    <div class="h-[200px]"></div>
+</Layout>
+
+<style lang="scss" is:global>
+    .combo-list .combo:nth-child(even) picture {
+        order: 1;
+        // @media (width < 900px) {
+        //     order: 1;
+        // }
+    }
+</style>

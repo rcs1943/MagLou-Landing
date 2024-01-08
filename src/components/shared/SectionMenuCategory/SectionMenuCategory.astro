@@ -1,0 +1,17 @@
+---
+interface Props {
+    category: string;
+    rhombusW: string;
+    rhombusH: string;
+}
+
+const { category, rhombusW, rhombusH } = Astro.props as Props;
+---
+
+<header class="flex flex-col items-center mb-[40px]">
+    <h1 class="text-7xl text-fourth font-semibold xsm:text-6xl">{category}</h1>
+    <div
+        class=`rhombus ${rhombusW} ${rhombusH} bg-fourth xsm:w-[80px] xsm:h-[80px]`
+    >
+    </div>
+</header>

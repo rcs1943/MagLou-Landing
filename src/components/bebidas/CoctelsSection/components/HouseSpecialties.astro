@@ -1,0 +1,49 @@
+---
+import CoctelInfo from "../../CoctelInfo/CoctelInfo.astro";
+import CoctelTitle from "../../CoctelTitle/CoctelTitle.astro";
+---
+
+<div class="flex flex-col flex-1 items-center gap-10">
+    <CoctelTitle title="Especiales de la casa" />
+    <div class="flex flex-col items-center gap-5">
+        <div class="flex items-center">
+            <picture>
+                <img
+                    src="/images/cocteles/tinto_verano.png"
+                    alt="Tinto de Verano"
+                />
+            </picture>
+            <CoctelInfo
+                title="Tinto de Verano"
+                price={29.9}
+                description="Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale"
+                width="w-[280px]"
+            />
+        </div>
+        <div class="flex items-center">
+            <CoctelInfo
+                title="Rock and Roll"
+                price={35}
+                description="Jack Daniel's, Jagermeister, jarabe de canela y passion fruit"
+                width="w-[210px]"
+            />
+            <picture>
+                <img
+                    src="/images/cocteles/rock_and_roll.png"
+                    alt="Rock and Roll"
+                />
+            </picture>
+        </div>
+        <div class="flex items-center">
+            <picture>
+                <img src="/images/cocteles/pisco_punch.png" alt="Pisco Punch" />
+            </picture>
+            <CoctelInfo
+                title="Pisco Punch"
+                price={25}
+                description="Pisco Italia, zumo de limón, jarabe de piña y bitter angostura"
+                width="w-[320px]"
+            />
+        </div>
+    </div>
+</div>

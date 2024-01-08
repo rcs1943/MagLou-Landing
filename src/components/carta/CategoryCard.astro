@@ -1,5 +1,5 @@
 ---
-interface MenuCard {
+interface Props {
     image: string;
     category: string;
     description: string;
@@ -8,7 +8,7 @@ interface MenuCard {
         content: string;
     };
 }
-const { image, category, description, menuButton } = Astro.props as MenuCard;
+const { image, category, description, menuButton } = Astro.props as Props;
 const { path, content } = menuButton;
 ---
 

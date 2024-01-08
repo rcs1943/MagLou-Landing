@@ -1,0 +1,103 @@
+---
+import SectionMenu from "@/components/shared/SectionMenu/SectionMenu.astro";
+import SectionMenuCategory from "@/components/shared/SectionMenuCategory/SectionMenuCategory.astro";
+import SubCategoryMenu from "@/components/shared/SubCategoryMenu/SubCategoryMenu.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const PIQUEOS_SUBCATEGORIES = [
+    {
+        subcategory: "Alitas",
+        itemList: [
+            {
+                item: "Alitas a la BBQ",
+                description: "Con porción de papas y cremas.",
+                priceTitle: 15,
+            },
+            {
+                item: "Alitas búfalo picante",
+                description: "Con porción de papas y crema.",
+                priceTitle: 15,
+            },
+            {
+                item: "Alitas orientales",
+                description: "Con porción de papas y salsa oriental.",
+                priceTitle: 15,
+            },
+            {
+                item: "Alitas bouchet",
+                description: "Con porción de papas más crema.",
+                priceTitle: 12,
+            },
+        ],
+    },
+    {
+        subcategory: "Tequeños",
+        itemList: [
+            {
+                item: "Tequeños de queso",
+                description: "12 unidades de tequeños con queso y crema.",
+                priceTitle: 12,
+            },
+            {
+                item: "Tequeños de jamón y queso",
+                description:
+                    "12 unidades de tequeños mixtos de jamón y queso con crema.",
+                priceTitle: 15,
+            },
+            {
+                item: "Tequeños de lomo",
+                description: "12 unidades de tequeños con lomo y crema.",
+                priceTitle: 25,
+            },
+        ],
+    },
+    {
+        subcategory: "Hamburguesas",
+        itemList: [
+            {
+                item: "Hamburguesa de pollo casera",
+                description: "Con ensalada, cremas y porción de papas.",
+                priceTitle: 10,
+            },
+            {
+                item: "Hamburguesa de carne casera",
+                description: "Con ensalada, cremas y porción de papas.",
+                priceTitle: 12,
+            },
+            {
+                item: "Hamburguesa Royal",
+                description:
+                    "Con carne, huevo, queso, ensalada, cremas y porción de papas.",
+                priceTitle: 18,
+            },
+            {
+                item: "Maglou Hamburguesa de la casa",
+                description:
+                    "Con carne, pollo deshilachado, queso, huevo, chorizo, plátano frito, ensalada, cremas y porción de papas.",
+                priceTitle: 22,
+            },
+        ],
+    },
+];
+---
+
+<Layout mainBgColor="main-gradient">
+    <div class="h-[200px]"></div>
+    <SectionMenu>
+        <SectionMenuCategory
+            category="Piqueos"
+            rhombusW="w-[100px]"
+            rhombusH="h-[100px]"
+        />
+        <div class="flex flex-col items-center gap-20">
+            {
+                PIQUEOS_SUBCATEGORIES.map(({ subcategory, itemList }) => (
+                    <SubCategoryMenu
+                        subcategory={subcategory}
+                        itemList={itemList}
+                    />
+                ))
+            }
+        </div>
+    </SectionMenu>
+</Layout>

@@ -9,6 +9,12 @@
     .btn-secondary {
         @apply btn-secondary-def sm:btn-secondary-sm;
     }
+    .gradient-bg {
+        @apply main-gradient;
+    }
+    .rhombus {
+        @apply rhombus-def;
+    }
 }
 
 @layer utilities {
@@ -44,5 +50,11 @@
     .btn-secondary-sm {
       padding: 10px 20px;
       font-size: 16px;
+    }
+    .main-gradient {
+        background: linear-gradient(149deg, #FFF5E7 0%, #F9DAB3 100%);
+    }
+    .rhombus-def {
+        transform: rotate(-45deg) skew(40deg, 40deg);
     }
 }

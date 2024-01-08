@@ -5,9 +5,10 @@ import Header from '../components/shared/Header/Header.astro';
 interface Props {
 	title?: string;
 	footerWithMap?: boolean;
+	mainBgColor?: string;
 }
 
-const { title = "MagLou", footerWithMap } = Astro.props;
+const { title = "MagLou", footerWithMap, mainBgColor } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ const { title = "MagLou", footerWithMap } = Astro.props;
 	</head>
 	<body>
 		<Header/>
-		<main>
+		<main class=`${mainBgColor}`>
 			<slot />
 		</main>
 		<Footer withMap={footerWithMap} />

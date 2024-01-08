@@ -1,0 +1,45 @@
+---
+interface Props {
+    subcategory: string;
+    itemList: {
+        item?: string;
+        description: string;
+        priceTitle?: number;
+        price?: number;
+    }[];
+}
+const { subcategory, itemList } = Astro.props as Props;
+---
+
+<div class="flex flex-col gap-2">
+    <div class="flex flex-col items-center">
+        <h2 class="text-5xl font-semibold text-center xsm:text-[40px]">
+            {subcategory}
+        </h2>
+        <div class="rhombus w-[60px] h-[60px] bg-black-2"></div>
+    </div>
+    <div class="flex flex-col gap-10">
+        {
+            itemList.map(({ item, description, price, priceTitle }) => (
+                <div class="flex flex-col items-center gap-3">
+                    <h3 class="text-3xl font-semibold text-black-2 text-center">
+                        {item}{" "}
+                        {priceTitle && (
+                            <span>
+                                | {priceTitle.toFixed(2)}
+                            </span>
+                        )}
+                    </h3>
+                    <p class="text-[22px] text-center xsm:text-xl">
+                        {description}{" "}
+                        {price && (
+                            <span>
+                                | <b>{price.toFixed(2)}</b>
+                            </span>
+                        )}
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+</div>
