@@ -1,5 +1,5 @@
 ---
-import CategoryCard from "@/components/carta/CategoryCard.astro";
+import CategoryCard from "@/components/menu/carta/CategoryCard.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const CARD_CATEGORIES = [
@@ -35,8 +35,12 @@ const CARD_CATEGORIES = [
 ---
 
 <Layout footerWithMap>
-    <section class="flex flex-col pt-[210px] pb-[100px] items-center gap-16 xl:px-6 sm:pt-[200px] sm:px-3 sm:gap-12">
-        <h1 class="font-bold text-black-2 text-6xl text-center sm:text-5xl">Nuestra Carta</h1>
+    <section
+        class="flex flex-col pt-[210px] pb-[100px] items-center gap-16 xl:px-6 sm:pt-[200px] sm:px-3 sm:gap-12"
+    >
+        <h1 class="font-bold text-black-2 text-6xl text-center sm:text-5xl">
+            Nuestra Carta
+        </h1>
         <article class="flex items-center justify-center flex-wrap gap-6">
             {
                 CARD_CATEGORIES.map(

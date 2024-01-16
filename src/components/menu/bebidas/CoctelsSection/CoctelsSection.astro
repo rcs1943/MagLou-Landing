@@ -1,0 +1,235 @@
+---
+import SectionMenu from "@/components/menu/SectionMenu.astro";
+import HouseSpecialties from "./components/HouseSpecialties.astro";
+import Classic from "./components/Classic.astro";
+import CoctelList from "./components/components/CoctelList.astro";
+import type { Code } from "astro:components";
+
+const HOUSE_SPECIALTIES = {
+    coctelTitle: "Especiales de la Casa",
+    coctels: [
+        {
+            name: "Torre Maglou Suprema",
+            price: 70,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[170px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Orgasmo Explícito",
+            price: 18,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Piña Colada",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+    ]
+}
+
+const CLASSICS = {
+    coctelTitle: "Clásicos",
+    coctels: [
+        {
+            name: "Daiquiri de Durazno",
+            price: 13,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Daiquiri de Piña",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Algarrobina",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Margarita",
+            price: 13,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Pisco Sour",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Maracuya Sour",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Chilcano de Pisco",
+            price: 10,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Chilcano de Maracuya",
+            price: 12,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Chilcano de Menta",
+            price: 10,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Peni Loco",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Machu Picchu",
+            price: 12,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Coctel de Durazno",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Orgasmo Clásico",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Piscina",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Mojito Clásico",
+            price: 12,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Mojito de Maracuyá",
+            price: 15,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Cuba Libre",
+            price: 10,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Pisco Sunrise",
+            price: 10,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Sex On The Beach",
+            price: 10,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+    ]
+}
+
+const JARS = {
+    coctelTitle: "Jarras",
+    coctels: [
+        {
+            name: "Chilcano de Maracuyá",
+            price: 30,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[170px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Chilcano de Pisco",
+            price: 25,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Mojito Clásico",
+            price: 30,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Cuba Libre",
+            price: 25,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Sex On The Beach",
+            price: 25,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+        {
+            name: "Piscina",
+            price: 35,
+            description: "Vino tinto, zumo de maracuyá, jarabe de goma, Ginger ale",
+            width: "w-[200px]",
+            image: "/images/cocteles/tinto_verano.png",
+        },
+    ]
+}
+---
+
+<SectionMenu>
+    <h2 class="font-semibold text-6xl pb-20">Cócteles</h2>
+    <div class="flex flex-col gap-16">
+        <!-- <div class="flex gap-10 lg:flex-col">
+            <OldSchool />
+            <Separator />
+            <HouseSpecialties />
+        </div> -->
+        <CoctelList {...HOUSE_SPECIALTIES} />
+        <CoctelList {...CLASSICS} />
+        <CoctelList {...JARS} />
+    </div>
+</SectionMenu>

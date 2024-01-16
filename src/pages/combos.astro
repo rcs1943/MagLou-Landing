@@ -1,71 +1,117 @@
 ---
-import Combo from "@/components/combos/combo.astro";
-import SectionMenu from "@/components/shared/SectionMenu/SectionMenu.astro";
-import SectionMenuCategory from "@/components/shared/SectionMenuCategory/SectionMenuCategory.astro";
+import SectionMenu from "@/components/menu/SectionMenu.astro";
+import SectionMenuCategory from "@/components/menu/SectionMenuCategory.astro";
+import ComboList from "@/components/menu/combos/ComboList.astro";
 import Layout from "@/layouts/Layout.astro";
 
-const COMBOS_1 = [
+const COMBOS = [
     {
-        comboTitle: "Ron Cartavio 750ml + 1 Jarra de Gaseosa + Hielo",
-        comboImg: "/images/combos/combo_1.jpg",
-        comboPrice: 70,
+        categoryName: "Ron",
+        comboList: [
+            {
+                comboTitle: "Combo Ron 750ML",
+                comboDescription:
+                    "Ron Cartavio 750ML + Jarra de Gaseosa + Hielo",
+                comboImg: "/images/combos/combo_1.jpg",
+                comboPrice: 70,
+            },
+            {
+                comboTitle: "Combo Ron 1LT",
+                comboDescription:
+                    "Ron Cartavio 1LT + Jarra de Gaseosa + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 90,
+            },
+            {
+                comboTitle: "Combo Flor de Caña",
+                comboDescription:
+                    "Flor de Caña 4 años + Jarra de Gaseosa + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 120,
+            },
+        ],
     },
     {
-        comboTitle: "Ron Cartavio 1Lt + 1 Jarra de Gaseosa + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 90,
+        categoryName: "Whisky",
+        comboList: [
+            {
+                comboTitle: "Combo Red Label",
+                comboDescription:
+                    "Red Label Johnnie Walker + Jarra de Gaseosa + Hielo",
+                comboImg: "/images/combos/combo_1.jpg",
+                comboPrice: 130,
+            },
+            {
+                comboTitle: "Combo Black Label",
+                comboDescription:
+                    "Black Label Johnnie Walker + Jarra de Evervess o 2 Red Bull + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 220,
+            },
+            {
+                comboTitle: "Combo Golden Label",
+                comboDescription:
+                    "Golden Label Johnnie Walker + Jarra de Evervess + 2 Red Bull + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 400,
+            },
+            {
+                comboTitle: "Combo Blue Label",
+                comboDescription:
+                    "Blue Label Johnnie Walker + Coca Cola 2.5LT + 6 Red Bull + Hielo",
+                comboImg: "/images/combos/combo_1.jpg",
+                comboPrice: 1200,
+            },
+            {
+                comboTitle: "Combo Old Parr",
+                comboDescription:
+                    "Old Parr 12 años + 4 Red Bull + Hielo + 2 Aguas",
+                comboImg: "/images/combos/combo_1.jpg",
+                comboPrice: 250,
+            },
+        ],
     },
     {
-        comboTitle: "Red Label Johnnie Walker + 1 Jarra de Gaseosa + Hielo",
-        comboImg: "/images/combos/combo_1.jpg",
-        comboPrice: 130,
-    },
-];
-
-const COMBOS_2 = [
-    {
-        comboTitle:
-            "Black Label Johnnie Walker + 1 Jarra de Evervess o 2 Red Bull + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 220,
-    },
-    {
-        comboTitle:
-            "Golden Label Johnnie Walker + 1 Jarra de Evervess + 2 Red Bull + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        // comboPrice: 220,
-    },
-    {
-        comboTitle:
-            "Blue Label Johnnie Walker + Coca Cola 2.5Lt + 6 Red Bull + Hielo",
-        comboImg: "/images/combos/combo_1.jpg",
-        // comboPrice: 130,
-    },
-];
-
-const COMBOS_3 = [
-    {
-        comboTitle: "Vodka Smirnoff de manzana + Jarra de Tampico + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 80,
+        categoryName: "Vodka",
+        comboList: [
+            {
+                comboTitle: "Combo Smirnoff Manzana",
+                comboDescription:
+                    "Vodka Smirnoff de manzana + Jarra de Tampico + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 80,
+            },
+            {
+                comboTitle: "Combo Smirnoff Limón",
+                comboDescription:
+                    "Vodka Smirnoff de limón + Jarra de Evervess + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 80,
+            },
+        ],
     },
     {
-        comboTitle: "Vodka Smirnoff de limón + Jarra de Evervess + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 80,
-    },
-];
-
-const COMBOS_4 = [
-    {
-        comboTitle: "Jagger + Jarra de Tampico + Hielo",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 150,
+        categoryName: "Jagger",
+        comboList: [
+            {
+                comboTitle: "Combo Jagger",
+                comboDescription: "Jagger + Jarra de Tampico + Hielo",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 150,
+            },
+        ],
     },
     {
-        comboTitle: "Tequila José Cuervo + Rodajas de limón + Sal",
-        comboImg: "/images/combos/combo_2.jpg",
-        comboPrice: 120,
+        categoryName: "Tequila",
+        comboList: [
+            {
+                comboTitle: "Combo Tequila",
+                comboDescription:
+                    "Tequila José Cuervo + Rodajas de limón + Sal",
+                comboImg: "/images/combos/combo_2.jpg",
+                comboPrice: 120,
+            },
+        ],
     },
 ];
 ---
@@ -78,68 +124,16 @@ const COMBOS_4 = [
             rhombusW="w-[110px]"
             rhombusH="h-[110px]"
         />
-        <div class="combo-list flex flex-col gap-16 pt-6">
+        <div class="flex flex-col w-full items-center gap-36 mt-[40px] xsm:gap-[88px]">
             {
-                COMBOS_1.map(({ comboTitle, comboImg, comboPrice }) => (
-                    <Combo
-                        comboTitle={comboTitle}
-                        comboImg={comboImg}
-                        comboPrice={comboPrice}
+                COMBOS.map(({ comboList, categoryName }) => (
+                    <ComboList
+                        comboList={comboList}
+                        categoryName={categoryName}
                     />
                 ))
             }
         </div>
     </SectionMenu>
-    <div class="h-[100px]"></div>
-    <SectionMenu>
-        <div class="combo-list flex flex-col gap-16 pt-6">
-            {
-                COMBOS_2.map(({ comboTitle, comboImg, comboPrice }) => (
-                    <Combo
-                        comboTitle={comboTitle}
-                        comboImg={comboImg}
-                        comboPrice={comboPrice}
-                    />
-                ))
-            }
-        </div>
-    </SectionMenu>
-    <div class="h-[100px]"></div>
-    <SectionMenu>
-        <div class="combo-list flex flex-col gap-16 pt-6">
-            {
-                COMBOS_3.map(({ comboTitle, comboImg, comboPrice }) => (
-                    <Combo
-                        comboTitle={comboTitle}
-                        comboImg={comboImg}
-                        comboPrice={comboPrice}
-                    />
-                ))
-            }
-        </div>
-    </SectionMenu>
-    <div class="h-[100px]"></div>
-    <SectionMenu>
-        <div class="combo-list flex flex-col gap-16 pt-6">
-            {
-                COMBOS_4.map(({ comboTitle, comboImg, comboPrice }) => (
-                    <Combo
-                        comboTitle={comboTitle}
-                        comboImg={comboImg}
-                        comboPrice={comboPrice}
-                    />
-                ))
-            }
-        </div>
-    </SectionMenu>
-    <div class="h-[200px]"></div>
+    <div class="h-[120px] xsm:hidden"></div>
 </Layout>
-
-<style lang="scss" is:global>
-    .combo-list .combo:nth-child(even) picture {
-        order: 1;
-        // @media (width < 900px) {
-        //     order: 1;
-        // }
-    }
-</style>

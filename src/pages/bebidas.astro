@@ -1,12 +1,13 @@
 ---
-import BeveragesSection from "@/components/bebidas/BeveragesSection/BeveragesSection.astro";
-import CoctelsSection from "@/components/bebidas/CoctelsSection/CoctelsSection.astro";
+import BeveragesSection from "@/components/menu/bebidas/BeveragesSection/BeveragesSection.astro";
+import CoctelsSection from "@/components/menu/bebidas/CoctelsSection/CoctelsSection.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout mainBgColor="main-gradient">
-    <div class="h-[200px]"/>
+    <div class="h-[200px]"></div>
     <BeveragesSection />
-    <div class="h-[40px]"/>
+    <div class="h-[40px] xsm:hidden"></div>
     <CoctelsSection />
+    <div class="h-[120px] xsm:hidden"></div>
 </Layout>

@@ -1,0 +1,37 @@
+---
+import SectionMenuSubcategory from "../SectionMenuSubcategory.astro";
+import type { ComboProps } from "./Combo.astro";
+import Combo from "./Combo.astro";
+
+interface Props {
+    categoryName: string;
+    comboList: ComboProps[];
+}
+
+const { categoryName, comboList } = Astro.props as Props;
+---
+
+<div class="flex flex-col w-full gap-12 xsm:gap-8">
+    <SectionMenuSubcategory subcategory={categoryName} />
+    <div class="list grid gap-16">
+        {comboList.map(({ comboTitle, comboDescription, comboImg, comboPrice }) => 
+            <Combo 
+                comboTitle={comboTitle}, 
+                comboDescription={comboDescription}
+                comboImg={comboImg}, 
+                comboPrice={comboPrice} 
+            />
+        )}
+    </div>
+</div >
+
+<style>
+    .list {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    @media (width < 500px) {
+        .list {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+    }
+</style>

@@ -1,0 +1,139 @@
+---
+import SectionMenu from "@/components/menu/SectionMenu.astro";
+import SubCategoryMenu from "@/components/menu/SubCategoryMenu.astro";
+import SectionMenuCategory from "../../SectionMenuCategory.astro";
+
+const BEBIDAS_LEFT = [
+    {
+        subcategory: "Vinos",
+        itemList: [
+            {
+                description: "Vino semiseco",
+                price: 40,
+            },
+            {
+                description: "Vino dulce",
+                price: 40,
+            },
+        ],
+    },
+    {
+        subcategory: "Cervezas",
+        itemList: [
+            {
+                description: "Torre de cerveza 1.5LT",
+                price: 60,
+            },
+            {
+                description: "Chop de cerveza personal",
+                price: 12,
+            },
+            {
+                description: "Heineken personal",
+                price: 10,
+            },
+            {
+                description: "Stella Artois personal",
+                price: 10,
+            },
+            {
+                description: "Corona personal",
+                price: 10,
+            },
+            {
+                description: "Pilsen personal",
+                price: 10,
+            },
+            {
+                description: "Heineken lata",
+                price: 10,
+            },
+            {
+                description: "Corona lata",
+                price: 10,
+            },
+        ],
+    },
+];
+
+const BEBIDAS_RIGHT = [
+    {
+        subcategory: "Saborizados",
+        itemList: [
+            {
+                description: "Mikes lata",
+                price: 10,
+            },
+        ],
+    },
+    {
+        subcategory: "Sin Alcohol",
+        itemList: [
+            {
+                description: "Jarra de gaseosa",
+                price: 5,
+            },
+            {
+                description: "Jarra de tampico",
+                price: 5,
+            },
+            {
+                description: "Red Bull",
+                price: 10,
+            },
+            {
+                description: "Agua San Mateo",
+                price: 3,
+            },
+        ],
+    },
+    {
+        subcategory: "Adicionales",
+        itemList: [
+            {
+                description: "Barra de Halls",
+                price: 2,
+            },
+            {
+                description: "Trident",
+                price: 2,
+            },
+            {
+                description: "Cubeta de hielo",
+                price: 3,
+            },
+        ],
+    },
+];
+---
+
+<SectionMenu>
+    <SectionMenuCategory
+        category="Bebidas"
+        rhombusW="w-[100px]"
+        rhombusH="h-[100px]"
+    />
+    <div class="flex w-full md:flex-col md:gap-20">
+        <div class="flex flex-col items-center gap-20 flex-1">
+            {
+                BEBIDAS_LEFT.map(({ subcategory, itemList }) => (
+                    <SubCategoryMenu
+                        subcategory={subcategory}
+                        itemList={itemList}
+                    />
+                ))
+            }
+        </div>
+        <hr class="w-[1px] h-full mx-[60px] bg-black md:hidden" />
+        <div class="flex flex-col items-center gap-20 flex-1">
+            {
+                BEBIDAS_RIGHT.map(({ subcategory, itemList }) => (
+                    <SubCategoryMenu
+                        subcategory={subcategory}
+                        itemList={itemList}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</SectionMenu>

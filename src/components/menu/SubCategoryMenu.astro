@@ -1,0 +1,38 @@
+---
+import SectionMenuSubcategory from "./SectionMenuSubcategory.astro";
+
+interface Props {
+    subcategory: string;
+    itemList: {
+        item?: string;
+        description: string;
+        priceTitle?: number;
+        price?: number;
+    }[];
+}
+const { subcategory, itemList } = Astro.props as Props;
+---
+
+<div class="flex flex-col gap-2">
+    <SectionMenuSubcategory subcategory={subcategory} />
+    <div class="flex flex-col gap-10">
+        {
+            itemList.map(({ item, description, price, priceTitle }) => (
+                <div class="flex flex-col items-center gap-3">
+                    <h3 class="text-3xl font-semibold text-black-2 text-center text-balance">
+                        {item}{" "}
+                        {priceTitle && <span>| {priceTitle.toFixed(2)}</span>}
+                    </h3>
+                    <p class="text-[22px] text-center text-pretty xsm:text-xl">
+                        {description}{" "}
+                        {price && (
+                            <span>
+                                | <b>{price.toFixed(2)}</b>
+                            </span>
+                        )}
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<section class="flex justify-center">
+    <article
+        class="flex justify-center w-full max-w-[1390px] px-[100px] xl:px-[20px] md:pb-[100px] xsm:px-[10px] xsm:pb-[80px]"
+    >
+        <div
+            class="relative flex flex-col w-full items-center justify-center py-[100px] px-[60px] md:px-[50px] xsm:px-[25px]"
+        >
+            <slot />
+        </div>
+    </article>
+</section>
+
+<style lang="scss">
+    div {
+        border-image: url(images/carta/marco.png) 250;
+        border-image-width: 212px;
+        // background-size: cover;
+        // background-position: top;
+        // object-fit: cover;
+        @media (width < 500px) {
+            // background-image: url(images/carta/marco_mobile.svg);
+            // background-size: contain;
+        }
+    }
+</style>

@@ -6,15 +6,20 @@ export default {
             colors: {
                 black: "#000000",
                 "black-2": "#0A0A0A",
+                "black-3": "#111010",
                 white: "#FFFFFF",
+                "white-2": "#F5F3EF",
+                gray: "#4B4B4A",
                 primary: "#F9DBB5",
                 secondary: "#FFF5E7",
                 tertiary: "#A16A41",
                 fourth: "#5C150E",
+                fifth: "#BD9045",
                 header: "rgba(10, 10, 10, 0.9)",
             },
         },
         screens: {
+            rdesk: { min: "1920px" },
             xl: { max: "1280px" },
             rxl: { min: "1280px" },
             // => @media (max-width: 1279px) { ... }

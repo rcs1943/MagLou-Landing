@@ -1,7 +1,7 @@
 ---
-import SectionMenu from "@/components/shared/SectionMenu/SectionMenu.astro";
-import SectionMenuCategory from "@/components/shared/SectionMenuCategory/SectionMenuCategory.astro";
-import SubCategoryMenu from "@/components/shared/SubCategoryMenu/SubCategoryMenu.astro";
+import SectionMenu from "@/components/menu/SectionMenu.astro";
+import SectionMenuCategory from "@/components/menu/SectionMenuCategory.astro";
+import SubCategoryMenu from "@/components/menu/SubCategoryMenu.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const PIQUEOS_SUBCATEGORIES = [
@@ -14,7 +14,7 @@ const PIQUEOS_SUBCATEGORIES = [
                 priceTitle: 15,
             },
             {
-                item: "Alitas búfalo picante",
+                item: "Alitas búfalo (Picante)",
                 description: "Con porción de papas y crema.",
                 priceTitle: 15,
             },
@@ -25,7 +25,7 @@ const PIQUEOS_SUBCATEGORIES = [
             },
             {
                 item: "Alitas bouchet",
-                description: "Con porción de papas más crema.",
+                description: "Con porción de papas y crema.",
                 priceTitle: 12,
             },
         ],
@@ -78,6 +78,16 @@ const PIQUEOS_SUBCATEGORIES = [
             },
         ],
     },
+    {
+        subcategory: "Chicharrón",
+        itemList: [
+            {
+                item: "Chicharrón de chancho 250GR",
+                description: "Con cancha, salsa de cebollas, porción de camote frito y rocoto molido.",
+                priceTitle: 35,
+            },
+        ],
+    },
 ];
 ---
 
@@ -100,4 +110,5 @@ const PIQUEOS_SUBCATEGORIES = [
             }
         </div>
     </SectionMenu>
+    <div class="h-[120px] xsm:hidden"></div>
 </Layout>

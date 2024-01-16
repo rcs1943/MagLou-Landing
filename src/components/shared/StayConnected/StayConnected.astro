@@ -1,0 +1,13 @@
+---
+import GalleryHeader from "./components/StayConnectedHeader.astro";
+import ImageList from "./components/ImageList.astro";
+import ImageListHeader from "./components/ImageListHeader.astro";
+---
+
+<section class="flex flex-col bg-black py-20 gap-16">
+    <GalleryHeader />
+    <article class="flex flex-col gap-10 md:gap-16">
+        <ImageListHeader />
+        <ImageList />
+    </article>
+</section>

@@ -1,0 +1,58 @@
+---
+import CoctelTitle from "../../../CoctelTitle/CoctelTitle.astro";
+import CoctelInfo from "./CoctelInfo.astro";
+
+interface Props {
+    coctelTitle: string;
+    coctels: {
+        name: string;
+        price: number;
+        description: string;
+        width: string;
+        image: string;
+    }[];
+}
+
+const { coctelTitle, coctels } = Astro.props as Props;
+---
+
+<div class="flex flex-col items-center gap-6">
+    <CoctelTitle title={coctelTitle} />
+    <div class="wrapper flex justify-center gap-8 flex-wrap">
+        {
+            coctels.map(({ name, price, description, width, image }) => (
+                <div class="flex items-center">
+                    <picture>
+                        <img src={image} alt={name} />
+                    </picture>
+                    <CoctelInfo
+                        title={name}
+                        price={price}
+                        description={description}
+                        width={width}
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .wrapper div:nth-child(6n + 4) picture {
+        order: 1;
+    }
+    .wrapper div:nth-child(6n + 5) picture {
+        order: 1;
+    }
+    .wrapper div:nth-child(6n + 6) picture {
+        order: 1;
+    }
+    @media (width < 900px) {
+        .wrapper div:nth-child(even) picture {
+            order: 1;
+        }
+        .wrapper div:nth-child(6n + 5) picture {
+            order: -1;
+        }
+    }
+</style>

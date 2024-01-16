@@ -16,33 +16,41 @@ const currentPath = pathname.slice(1);
         <div
             class="flex items-center w-full justify-end pr-[170px] gap-24 xl:pr-[100px] xl:gap-16 lg:flex-col lg:p-0"
         >
-            <li class="duration-200 hover:text-primary">
-                <a class={currentPath === "" ? "active" : ""} href="/">HOME</a>
-            </li>
-            <li class="duration-200 hover:text-primary">
+            <li>
                 <a
-                    class={currentPath === "nosotros" ? "active" : ""}
+                    class="py-2 duration-500 border-transparent border-b-[2px] hover:border-primary hover:text-primary lg:border-0"
+                    class:list={currentPath === "" ? "active" : ""}
+                    href="/">HOME</a
+                >
+            </li>
+            <li>
+                <a
+                    class="py-2 duration-500 border-transparent border-b-[2px] hover:border-primary hover:text-primary lg:border-0"
+                    class:list={currentPath === "nosotros" ? "active" : ""}
                     href="/nosotros">QUIÉNES SOMOS</a
                 >
             </li>
-            <li class="duration-200 hover:text-primary">
+            <li>
                 <a
-                    class={currentPath === "galeria" ? "active" : ""}
-                    href="/galeria">GALERÍA</a
+                    class="py-2 duration-500 border-transparent border-b-[2px] hover:border-primary hover:text-primary lg:border-0"
+                    class:list={currentPath === "carta" ? "active" : ""}
+                    href="/carta">CARTA</a
                 >
             </li>
         </div>
         <div
             class="flex items-center w-full justify-start pl-[170px] gap-36 xl:pl-[100px] xl:gap-16 lg:flex-col lg:p-0"
         >
-            <li class="duration-200 hover:text-primary">
-                <a class={currentPath === "carta" ? "active" : ""} href="/carta"
-                    >CARTA</a
+            <li>
+                <a
+                    class="py-2 duration-500 border-transparent border-b-[2px] hover:border-primary hover:text-primary lg:border-0"
+                    class:list={currentPath === "galeria" ? "active" : ""}
+                    href="/galeria">GALERÍA</a
                 >
             </li>
             <li>
                 <a
-                    href="https://wa.me/+51912379380"
+                    href="https://wa.me/+51933819130"
                     target="_blank"
                     class="btn-primary"
                 >
@@ -54,45 +62,41 @@ const currentPath = pathname.slice(1);
                 </a>
             </li>
         </div>
-        <div class="absolute bottom-14">
-            <ul class="flex gap-4">
-                <li>
-                    <a
-                        href="#"
-                        target="_blank"
-                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
-                        ><iconify-icon icon="mdi:instagram"></iconify-icon></a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="#"
-                        target="_blank"
-                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
-                        ><iconify-icon icon="la:facebook-f"></iconify-icon></a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://wa.me/+51912379380"
-                        target="_blank"
-                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
-                    >
-                        <iconify-icon icon="ic:baseline-whatsapp"
-                        ></iconify-icon>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#"
-                        target="_blank"
-                        class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
-                        ><iconify-icon icon="ic:baseline-tiktok"
-                        ></iconify-icon></a
-                    >
-                </li>
-            </ul>
-        </div>
+        <ul class="hidden absolute bottom-14 lg:flex gap-4">
+            <li>
+                <a
+                    href="#"
+                    target="_blank"
+                    class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    ><iconify-icon icon="mdi:instagram"></iconify-icon></a
+                >
+            </li>
+            <li>
+                <a
+                    href="#"
+                    target="_blank"
+                    class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    ><iconify-icon icon="la:facebook-f"></iconify-icon></a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://wa.me/+51933819130"
+                    target="_blank"
+                    class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                >
+                    <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon>
+                </a>
+            </li>
+            <li>
+                <a
+                    href="#"
+                    target="_blank"
+                    class="flex text-3xl p-2 rounded-full duration-500 hover:bg-primary hover:text-black-2"
+                    ><iconify-icon icon="ic:baseline-tiktok"></iconify-icon></a
+                >
+            </li>
+        </ul>
     </ul>
 </nav>
 
@@ -117,5 +121,9 @@ const currentPath = pathname.slice(1);
     }
     #nav-menu li a.active {
         color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        @media (width < 1024px) {
+            border-bottom: 0;
+        }
     }
 </style>

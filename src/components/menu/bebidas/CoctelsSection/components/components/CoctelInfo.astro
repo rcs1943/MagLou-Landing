@@ -1,0 +1,15 @@
+---
+interface Props {
+    title: string;
+    price: number;
+    description: string;
+    width?: string;
+}
+
+const { title, price, description, width } = Astro.props as Props;
+---
+
+<div class=`flex flex-col items-center text-center ${width}`>
+    <h4 class="font-semibold text-[22px] text-balance xsm:text-xl">{title} | {price.toFixed(2)}</h4>
+    <p class="font-light text-[22px] xsm:text-xl">{description}</p>
+</div>

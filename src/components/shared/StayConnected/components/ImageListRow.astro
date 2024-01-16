@@ -1,0 +1,30 @@
+---
+const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+---
+
+<div class="flex w-full overflow-hidden">
+    <div class="sliders flex gap-3 flex-nowrap justify-start">
+        {
+            test.map(() => (
+                <div class="min-w-[12.5%] sm:min-w-[210px]">
+                    <img
+                        src="images/home/home_hero_responsive.jpg"
+                        class="object-cover min-w-[260px] xl:min-w-[240px] sm:min-w-[210px] aspect-square"
+                        alt="Imagen Instagram"
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style lang="scss">
+    .sliders {
+        animation: translation 25s linear infinite;
+    }
+    @keyframes translation {
+        to {
+            transform: translateX(-60%);
+        }
+    }
+</style>
