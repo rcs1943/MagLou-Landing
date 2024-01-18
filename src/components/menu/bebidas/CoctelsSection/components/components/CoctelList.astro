@@ -8,7 +8,8 @@ interface Props {
         name: string;
         price: number;
         description: string;
-        width: string;
+        textWidth: string;
+        imageWidth?: string;
         image: string;
     }[];
 }
@@ -20,16 +21,16 @@ const { coctelTitle, coctels } = Astro.props as Props;
     <CoctelTitle title={coctelTitle} />
     <div class="wrapper flex justify-center gap-8 flex-wrap">
         {
-            coctels.map(({ name, price, description, width, image }) => (
+            coctels.map(({ name, price, description, textWidth, imageWidth, image }) => (
                 <div class="flex items-center">
-                    <picture>
+                    <picture class=`${imageWidth}`>
                         <img src={image} alt={name} />
                     </picture>
                     <CoctelInfo
                         title={name}
                         price={price}
                         description={description}
-                        width={width}
+                        width={textWidth}
                     />
                 </div>
             ))
