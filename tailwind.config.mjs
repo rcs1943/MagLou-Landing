@@ -18,6 +18,12 @@ export default {
                 header: "rgba(10, 10, 10, 0.9)",
             },
         },
+        keyframes: {
+            reveal: {
+                from: {opacity: 0},
+                to: {opacity: 1}
+            }
+        },
         screens: {
             rdesk: { min: "1920px" },
             xl: { max: "1280px" },

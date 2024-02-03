@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import LinkList from "./components/LinkList.astro";
+import logo from "src//images/logo.png";
 ---
 
 <header
@@ -13,7 +15,7 @@ import LinkList from "./components/LinkList.astro";
     </div>
     <a href="/" class="absolute top-2 left-2/4 -translate-x-2/4">
         <picture>
-            <img src="/images/logo.png" alt="MagLou Logo" class="w-[140px]" />
+            <Image src={logo} alt="MagLou Logo" class="w-[140px]" />
         </picture>
     </a>
     <button

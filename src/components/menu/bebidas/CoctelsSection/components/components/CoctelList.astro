@@ -1,36 +1,31 @@
 ---
+import { Image } from "astro:assets";
 import CoctelTitle from "../../../CoctelTitle/CoctelTitle.astro";
 import CoctelInfo from "./CoctelInfo.astro";
+import type {CollectionEntry} from "astro:content";
 
-interface Props {
+type Props = {
     coctelTitle: string;
-    coctels: {
-        name: string;
-        price: number;
-        description: string;
-        textWidth: string;
-        imageWidth?: string;
-        image: string;
-    }[];
+    coctels: CollectionEntry<'cocktails'>[];
 }
 
-const { coctelTitle, coctels } = Astro.props as Props;
+const { coctelTitle, coctels } = Astro.props;
 ---
 
 <div class="flex flex-col items-center gap-6">
     <CoctelTitle title={coctelTitle} />
     <div class="wrapper flex justify-center gap-8 flex-wrap">
         {
-            coctels.map(({ name, price, description, textWidth, imageWidth, image }) => (
+            coctels.map((cocktail) => (
                 <div class="flex items-center">
-                    <picture class=`${imageWidth}`>
-                        <img src={image} alt={name} />
+                    <picture class=`${cocktail.imageWidth} xsm:max-w-[125px]`>
+                        <Image src={cocktail.image} alt="Coctel" />
                     </picture>
                     <CoctelInfo
-                        title={name}
-                        price={price}
-                        description={description}
-                        width={textWidth}
+                        title={cocktail.name}
+                        price={cocktail.price}
+                        description={cocktail.description}
+                        width={cocktail.textWidth}
                     />
                 </div>
             ))

@@ -23,6 +23,11 @@
     src: local("BrandingSF"), url("../font/BrandingSF-Black.ttf");
     font-weight: 900;
 }
+@font-face {
+    font-family: "BeyondInfinity";
+    src: local("BeyondInfinity"), url("../font/BeyondInfinity.ttf");
+    font-weight: 400;
+}
 :root {
     --black: #000;
     --black-2: #0a0a0a;

@@ -1,18 +1,25 @@
+---
+import { Image } from "astro:assets";
+import logo from "src//images/logo.png";
+---
+
 <header class="flex justify-center w-full">
     <div
         class="flex justify-between items-center w-full max-w-[1370px] px-36 lgmd:px-20 md:px-12 md:flex-col md:items-center md:gap-8 sm:px-6"
     >
         <div class="flex items-center gap-4">
             <picture class="w-[60px]">
-                <img src="images/logo2.png" alt="MagLou Logo" />
+                <Image src={logo} alt="MagLou Logo" />
             </picture>
             <div class="text-secondary">
                 <h4 class="text-xl">@maglou</h4>
                 <p class="text-lg">📍Calle Cahuide 150 - Parcona</p>
             </div>
         </div>
-        <a href="" class="btn-primary h-fit px-5 text-lg"
-            >Síguenos en Instagram</a
+        <a
+            href="https://www.instagram.com/magloukaraokerestobar/"
+            target="_blank"
+            class="btn-primary h-fit px-5 text-lg">Síguenos en Instagram</a
         >
     </div>
 </header>

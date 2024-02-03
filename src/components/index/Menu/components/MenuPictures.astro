@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets"
+import piqueosImg from "src//images/home/home_piqueos.png"
+import bebidasImg from "src//images/home/home_bebidas.png"
+import combosImg from "src//images/home/home_combos.png"
+---
+
+<div
+    class="flex gap-36 flex-wrap justify-center px-[19px] mt-10 xl:gap-24 lg:gap-y-16"
+>
+    <a
+        href="/piqueos"
+        class="flex flex-col items-center gap-6 -translate-y-24 lg:translate-y-0 lg:gap-2"
+    >
+        <picture>
+            <Image
+                src={piqueosImg}
+                alt="Piqueos"
+                class="w-[260px] duration-[400ms] hover:-translate-y-3"
+            />
+        </picture>
+        <h3 class="font-semibold text-tertiary text-[34px]">Piqueos</h3>
+    </a>
+    <a
+        href="/bebidas"
+        class="flex flex-col items-center gap-6 duration-200 lg:gap-2"
+    >
+        <picture>
+            <Image
+                src={bebidasImg}
+                alt="Bebidas"
+                class="w-[260px] duration-[400ms] hover:-translate-y-3"
+            />
+        </picture>
+        <h3 class="font-semibold text-tertiary text-[34px]">Bebidas</h3>
+    </a>
+    <a
+        href="/combos"
+        class="flex flex-col items-center gap-6 -translate-y-24 lg:translate-y-0 lg:gap-2"
+    >
+        <picture>
+            <Image
+                src={combosImg}
+                alt="Combos"
+                class="w-[260px] duration-[400ms] hover:-translate-y-3"
+            />
+        </picture>
+        <h3 class="font-semibold text-tertiary text-[34px]">Combos</h3>
+    </a>
+</div>

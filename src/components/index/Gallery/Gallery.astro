@@ -1,0 +1,145 @@
+---
+import GalleryRow from "./components/GalleryRow.astro";
+
+const GALLERY = [
+    {
+        mainImage: {
+            path: "/images/home/gallery/home_gallery_1.jpeg",
+            width: "1600",
+            height: "1200",
+        },
+        images: [
+            {
+                path: "/images/home/gallery/home_gallery_2.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_3.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_4.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_5.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_6.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_7.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+        ],
+    },
+    {
+        mainImage: {
+            path: "/images/home/gallery/home_gallery_8.jpeg",
+            width: "1200",
+            height: "1600",
+        },
+        images: [
+            {
+                path: "/images/home/gallery/home_gallery_9.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_10.jpeg",
+                width: "900",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_11.jpeg",
+                width: "1600",
+                height: "1200",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_12.jpeg",
+                width: "900",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_13.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_14.jpeg",
+                width: "900",
+                height: "1600",
+            },
+        ],
+    },
+    {
+        mainImage: {
+            path: "/images/home/gallery/home_gallery_15.jpeg",
+            width: "1200",
+            height: "1600",
+        },
+        images: [
+            {
+                path: "/images/home/gallery/home_gallery_16.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_17.jpeg",
+                width: "1200",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_18.jpeg",
+                width: "900",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_19.jpeg",
+                width: "900",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_20.jpeg",
+                width: "900",
+                height: "1600",
+            },
+            {
+                path: "/images/home/gallery/home_gallery_21.jpeg",
+                width: "900",
+                height: "1600",
+            },
+        ],
+    },
+];
+---
+
+<section class="flex flex-col" id="gallery">
+    {
+        GALLERY.map(({ images, mainImage }) => (
+            <GalleryRow mainImage={mainImage} restImages={images} />
+        ))
+    }
+</section>
+
+<script>
+    import PhotoSwipeLightBox from "photoswipe/lightbox";
+    document.addEventListener("astro:page-load", () => {
+
+        const lightbox = new PhotoSwipeLightBox({
+            gallery: "#gallery",
+            children: "a",
+            pswpModule: () => import("photoswipe"),
+        });
+
+        lightbox.init();
+    });
+</script>

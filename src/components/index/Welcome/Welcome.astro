@@ -1,28 +1,29 @@
+---
+import { Image } from "astro:assets";
+import localImg from "src//images/home/home_welcome_location.jpg";
+---
+
 <section
     class="flex flex-col items-center py-24 bg-black gap-[30px] xl:px-8 md:px-4 sm:gap-16"
 >
     <article class="flex flex-col items-center gap-12">
-        <h2 class="text-primary text-7xl font-bold md:text-6xl sm:text-5xl">
-            Bienvenido
-        </h2>
+        <h2 class="text-primary text-7xl font-bold md:text-6xl">Bienvenido</h2>
         <div class="w-[69%] lg:w-3/4 md:w-[90%]">
             <p
-                class="text-secondary font-medium text-2xl text-center leading-[60px] md:text-xl md:leading-[50px] xsm:text-[20px]"
+                class="text-secondary font-medium text-[22px] text-center leading-[60px] text-pretty md:text-xl md:leading-[50px] xsm:text-[20px]"
             >
-                Te invitamos a nuestra sala de fiestas pública para que rockees
-                el escenario junto con otros invitados. Para eventos privados,
-                ofrecemos siete salas exclusivas en las que podrá divertirse y
-                cantar con sus amigos sin que nadie le moleste. ¡Reserva ya tu
-                sala!
+                ¡Bienvenidos a MagLou Karaoke Restobar! Sumérgete en la fusión
+                única de música y sabores. Descubre la emoción del karaoke
+                mientras disfrutas de nuestros deliciosos piqueos y bebidas. En
+                MagLou, cada noche es una celebración, donde la diversión y la
+                buena comida se encuentran para crear momentos inolvidables. ¡La
+                fiesta comienza aquí!
             </p>
         </div>
     </article>
     <article class="flex gap-20 mt-14 lg:flex-col lg:items-center lg:mt-0">
         <picture class="w-[600px] lg:w-[70%] lg:order-1 md:w-[90%] xsm:w-full">
-            <img
-                src="/images/home/home_welcome_location.jpg"
-                alt="Local MagLou Parcona"
-            />
+            <Image src={localImg} alt="Local MagLou Parcona" />
         </picture>
         <div class="flex flex-col gap-12 xsm:gap-16">
             <div class="flex flex-col gap-6 xsm:gap-10">
@@ -39,11 +40,11 @@
                         class="text-primary text-[50px] h-max"></iconify-icon>
                     <div class="flex flex-col gap-1 sm:text-center">
                         <span
-                            class="text-secondary font-medium text-2xl md:text-xl sm:text-lg"
+                            class="text-secondary font-medium text-xl sm:text-lg"
                             >Calle Cahuide 150</span
                         >
                         <span
-                            class="text-secondary font-medium text-2xl md:text-xl sm:text-lg"
+                            class="text-secondary font-medium text-xl sm:text-lg"
                             >Parcona</span
                         >
                     </div>
@@ -61,15 +62,16 @@
                     <iconify-icon
                         icon="bi:clock"
                         class="text-primary text-[50px] h-max"></iconify-icon>
-                    <div class="flex flex-col gap-1 sm:text-center">
+                    <div class="flex flex-col gap-1 sm:text-center sm:gap-6">
                         <span
-                            class="text-secondary font-medium text-2xl md:text-xl sm:text-lg"
-                            >Lunes - Viernes: 6:00 pm - 2:00 am</span
+                            class="text-secondary text-balance font-medium text-xl sm:text-lg"
+                            >Lunes - Viernes y Domingo: 6pm - 2am</span
                         >
                         <span
-                            class="text-secondary font-medium text-2xl md:text-xl sm:text-lg xsm:leading-10"
-                            >Sábados, Domingos y Feriados: 5:00 pm - 3:00 am</span
+                            class="text-secondary font-medium text-xl sm:text-lg"
                         >
+                            Sábado: 6pm - 4am
+                        </span>
                     </div>
                 </div>
             </div>
